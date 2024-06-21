@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>NLP AutoML</title>
+</head>
+<body>
+    <div class="container">
+        <h1>NLP AutoML Prediction</h1>
+        <form method="post">
+            <textarea name="text" placeholder="Enter text here..." required></textarea>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+            <p><strong>Input Text:</strong> {{ text }}</p>
+            <p><strong>Prediction:</strong> {{ prediction }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
